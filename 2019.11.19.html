@@ -13229,7 +13229,7 @@ div#notebook {
 
 <span class="c1">#datoer for datofiltering</span>
 <span class="n">from_date</span><span class="o">=</span> <span class="s1">&#39;2019-11-19 00:00:00&#39;</span>
-<span class="n">to_date</span><span class="o">=</span> <span class="s1">&#39;2019-11-20 00:45:00&#39;</span>
+<span class="n">to_date</span><span class="o">=</span> <span class="s1">&#39;2019-11-20 00:00:00&#39;</span>
 
 <span class="c1">#output fil</span>
 <span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;WestAlara test1.html&#39;</span>
@@ -13320,8 +13320,8 @@ Merging..
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="n">df</span><span class="o">=</span><span class="n">results</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">results</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;</span> <span class="n">from_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">to_date</span><span class="p">)]</span>
-<span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">results</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;</span> <span class="n">from_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">to_date</span><span class="p">)]</span>
 </pre></div>
 
     </div>
@@ -13363,29 +13363,29 @@ Merging..
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of NaNs:
- CP1 Drive1 Actual Power     44509
-CP2 Drive1 Actual Power     44509
-DBU1 Power                  44509
-DBU2 Power                  44509
-DBU3 Power                  44509
-DBU4 Power                  44509
-DSU1 Actual Power           44509
-DSU1 DC Voltage             44509
-DSU2 Actual Power           44509
-DSU2 DC Voltage             44509
-DW1 Drive1 Actual Power     44509
-DW1 Drive2 Actual Power     44509
-DW1 Drive3 Actual Power     44509
-DW1 Drive4 Actual Power     44509
-MP1 Drive1 Actual Power     44509
-MP2 Drive1 Actual Power     44509
-MP3 Drive1 Actual Power     44509
-TD1 Drive1 Actual Power     44509
-TD1 Drive2 Actual Power     44509
-DG1 Power                  176757
-DG2 Power                  176757
-DG3 Power                  176757
-DG4 Power                  176757
+ CP1 Drive1 Actual Power     43159
+CP2 Drive1 Actual Power     43159
+DBU1 Power                  43159
+DBU2 Power                  43159
+DBU3 Power                  43159
+DBU4 Power                  43159
+DSU1 Actual Power           43159
+DSU1 DC Voltage             43159
+DSU2 Actual Power           43159
+DSU2 DC Voltage             43159
+DW1 Drive1 Actual Power     43159
+DW1 Drive2 Actual Power     43159
+DW1 Drive3 Actual Power     43159
+DW1 Drive4 Actual Power     43159
+MP1 Drive1 Actual Power     43159
+MP2 Drive1 Actual Power     43159
+MP3 Drive1 Actual Power     43159
+TD1 Drive1 Actual Power     43159
+TD1 Drive2 Actual Power     43159
+DG1 Power                  171400
+DG2 Power                  171400
+DG3 Power                  171400
+DG4 Power                  171400
 dtype: int64
 </pre>
 </div>
@@ -13480,7 +13480,7 @@ dtype: int64
                             <span class="n">name</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
                             <span class="n">hovertemplate</span><span class="o">=</span>
                             <span class="s1">&#39;&lt;b&gt;DateTime&lt;/b&gt;: %</span><span class="si">{x}</span><span class="s1">&#39;</span><span class="o">+</span>
-                            <span class="s1">&#39;&lt;br&gt;&lt;b&gt;Value&lt;/b&gt;: %</span><span class="si">{y:.2f}</span><span class="s1"> Voltage&#39;</span>
+                            <span class="s1">&#39;&lt;br&gt;&lt;b&gt;Value&lt;/b&gt;: %</span><span class="si">{y:.2f}</span><span class="s1"> kW&#39;</span>
                           <span class="c1">#  &#39;&lt;br&gt;&lt;b&gt;Mean&lt;/b&gt;: {:.2f} W&#39;.format(mean)</span>
                           <span class="c1">#  &#39;&lt;br&gt;&lt;b&gt;Kwh of period&lt;/b&gt;: {:.2f} kWh&#39;.format(area),</span>
                                     <span class="c1">#fill=(colors_area_graph[n])</span>
@@ -13511,7 +13511,7 @@ dtype: int64
                             <span class="n">name</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
                             <span class="n">hovertemplate</span> <span class="o">=</span>
                             <span class="s1">&#39;&lt;b&gt;DateTime&lt;/b&gt;: %</span><span class="si">{x}</span><span class="s1">&#39;</span><span class="o">+</span>
-                            <span class="s1">&#39;&lt;br&gt;&lt;b&gt;Value&lt;/b&gt;: %</span><span class="si">{y:.2f}</span><span class="s1"> V&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;&lt;br&gt;&lt;b&gt;Value&lt;/b&gt;: %</span><span class="si">{y:.2f}</span><span class="s1"> Voltage&#39;</span><span class="p">,</span>
                            <span class="c1"># &#39;&lt;br&gt;&lt;b&gt;Mean&lt;/b&gt;: {:.2f} V&#39;.format(mean),</span>
                             <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">to_hex</span><span class="p">(</span><span class="n">colors_line_graph</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span>
                                      <span class="n">width</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
@@ -13562,13 +13562,13 @@ Subplot 2 Done
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
 <span class="c1"># nbi:hide_out</span>
-<span class="n">f</span><span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="c1">#f= go.FigureWidget(fig)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;figure made&#39;</span><span class="p">)</span>
 
 <span class="c1">#sliderdata</span>
 <span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;S&#39;</span><span class="p">)</span>
-<span class="n">options</span> <span class="o">=</span> <span class="p">[(</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39; </span><span class="si">%d</span><span class="s1"> %m %Y, %H:%m:%S &#39;</span><span class="p">),</span> <span class="n">date</span><span class="p">)</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">[(</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39; %Y %m </span><span class="si">%d</span><span class="s1">, %H:%M:%S &#39;</span><span class="p">),</span> <span class="n">date</span><span class="p">)</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
 <span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">style</span> <span class="o">=</span><span class="p">{</span><span class="s1">&#39;description_with&#39;</span><span class="p">:</span> <span class="s1">&#39;initial&#39;</span><span class="p">}</span>
 
@@ -13662,7 +13662,7 @@ button made
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
 <span class="n">container</span> <span class="o">=</span> <span class="n">wg</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">logfiles</span><span class="p">,</span> <span class="n">calculation_type</span><span class="p">,</span> <span class="n">calculate_button</span><span class="p">,</span> <span class="n">resultmessage</span><span class="p">])</span>
-<span class="n">wg</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">container</span><span class="p">,</span> <span class="n">slider</span><span class="p">,</span> <span class="n">f</span><span class="p">])</span>
+<span class="n">wg</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">container</span><span class="p">,</span> <span class="n">slider</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13687,6 +13687,25 @@ button made
 
 </div>
 
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in nbinteract-hide_out
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#nbi:hide_in</span>
+<span class="c1">#nbi:hide_out</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
